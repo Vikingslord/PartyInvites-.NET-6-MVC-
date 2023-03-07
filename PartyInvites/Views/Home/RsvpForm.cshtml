@@ -1,0 +1,36 @@
+﻿@*Accessing model through the special @ symbol*@
+@model PartyInvites.Models.GuestResponse
+
+@{
+    ViewData["Title"] = "Rsvp Form";
+}
+
+<body>
+    <form asp-action="RsvpForm" method="post">
+        <div asp-validation-summary="All"></div>
+        <p>
+            <label asp-for="Name">Name:</label>
+            <input asp-for="Name"/>
+        </p>
+        
+        <p>
+            <label asp-for="Email">Email:</label>
+            <input asp-for="Email"/>
+        </p>
+
+        <p>
+            <label asp-for="Phone">Phone:</label>
+            <input asp-for="Phone"/>
+        </p>
+
+        <p>
+            <label>Will You Attend?</label>
+            <select asp-for="WillAttend">
+                <option value="">Choose an option</option>
+                <option value="True">Yes, I'll be there!'</option>
+                <option value="False">Sorry, I won't be there!'</option>
+            </select>
+        </p>
+        <button type="submit" class="btn btn-outline-success">Submit Rsvp</button>
+    </form>
+</body>
